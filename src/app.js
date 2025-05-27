@@ -6,7 +6,7 @@ const forecast = require('../../weather-app/utils/forecast');
 const app=express() //This is for initialising a instance of a express for our app
 //For Customise Server static service path using app.use().For more perfection use a variable
 // app.use(express.static(path.join(__dirname,'../public')))
-
+const port=process.env.PORT||3000
 
 //Define path for express config
 const publicDirectoryPath=path.join(__dirname,'../public')
@@ -147,8 +147,8 @@ app.get('/{*any}',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('App is listening on port 3000')
+app.listen(port,()=>{
+    console.log('App is listening on port: '+port)
 })
 
 
